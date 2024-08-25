@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: 'Comic Neue', cursive;
+}
+
+#book-container {
+    width: 90vw;
+    height: 90vh;
+    max-width: 1000px;
+    max-height: 1000px;
+}
+
+#book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-spread {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    left: 0;
+    top: 0;
+}
+
+.page-spread.hidden {
+    display: none;
+}
+
+.page-spread.visible {
+    display: flex;
+}
+
+.page {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    position: relative;
+    font-size: 24px;
+    text-align: center; /* Center the text */
+}
+
+.page::after {
+    content: attr(data-page);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+.page img {
+    max-width: 80%;
+    max-height: 60%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.page h3 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+#cover, #back-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFE5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
+
+#cover {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    position: relative; /* Add this line */
+    overflow: hidden; /* Add this line */
+}
+
+#cover img {
+    position: absolute; /* Change to absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Fill the entire width */
+    height: 100%; /* Fill the entire height */
+    object-fit: cover; /* Cover the entire area */
+    margin-bottom: 0; /* Remove margin */
+}
+
+#cover h1, #cover p { /* Add this new rule */
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: add text shadow for better visibility */
+}
+
+#back-cover {
+    background-color: #E5FFEC;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    z-index: 0;
+}
+
+#back-cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#back-cover h1, #back-cover p { /* Add this new rule */
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#back-cover.visible {
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #book-container {
+        width: 95vw;
+        height: 95vh;
+    }
+
+    .page h3 {
+        font-size: 18px;
+    }
+
+    #cover h1 {
+        font-size: 28px;
+    }
+
+    #cover p {
+        font-size: 18px;
+    }
+}
