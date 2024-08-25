@@ -21,16 +21,12 @@ This project was created using a combination of AI tools:
 - Enhance interactivity features
 - Add more book subjects over time
 
-## Getting Started
-
-(Add instructions for setting up and running the project locally, if applicable)
 
 ## Contributing
 
 We welcome contributions and collaborations! Feel free to open issues, submit pull requests, or provide feedback to help improve the project.
 
-(Add more specific guidelines for contributions if needed)
 
 ## License
 
-(Specify the license for your project)
+MIT License
