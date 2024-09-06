@@ -1,4 +1,4 @@
-# book4babies
+# AI for Babies
 
 An interactive children's book created with AI assistance.
 
