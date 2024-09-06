@@ -4,6 +4,8 @@ An interactive children's book created with AI assistance.
 
 ## How to Use
 
+Available at https://book4babies-omega.vercel.app/
+
 1. Open the website in your browser.
 2. Navigate through the pages using your keyboard arrow keys or by clicking/tapping on the screen.
 
